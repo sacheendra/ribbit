@@ -1,0 +1,25 @@
+<template name="public">
+    <div id="content">
+        <div class="wrapper">
+            <div class="panel right">
+                <h1>Create a Ribbit</h1>
+                <p>
+                    <textarea name="text" class="ribbitText"></textarea>
+                    <input id="createRibbit" type="submit" value="Ribbit!">
+                </p>
+            </div><!-- panel right -->
+            <div id="ribbits" class="panel left">
+                <h1>Public Ribbits</h1>
+                {{#each ribbits}}
+                <div class="ribbitWrapper">
+                    <img class="avatar" src="gfx/user2.png">
+                    <span class="name">{{publicUserFull user_id}}</span> @{{publicUserName user_id}} <span class="time">{{elapsedTime ribbit}}</span>
+                    <p>
+                        {{ribbit}}
+                    </p>
+                </div><!-- ribbitWrapper -->
+                {{/each}}
+            </div><!-- panel left -->
+        </div><!-- wrapper -->
+    </div><!-- content -->
+</template>

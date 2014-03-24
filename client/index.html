@@ -1,0 +1,28 @@
+<head>
+
+</head>
+
+<body>
+<header>
+    {{> header}}
+</header>
+    {{> content}}
+</body>
+
+<template name="content">
+    {{#if currentUser}}
+        {{#if currentPage "buddies"}}
+            {{> buddiescontent}}
+        {{/if}}
+
+        {{#if currentPage "public"}}
+            {{> public}}
+        {{/if}}
+
+        {{#if currentPage "profile"}}
+            {{> profile}}
+        {{/if}}
+        {{else}}
+            {{> homecontent}}
+    {{/if}}
+</template>

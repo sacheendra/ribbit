@@ -1,0 +1,25 @@
+<template name="profile">
+    <div id="content">
+        <div class="wrapper">
+            <div class="panel right">
+                <h1>Search for profiles</h1>
+                <p>
+                    <input name="query" type="text">
+                    <input type="submit" value="Search!">
+                </p>
+            </div>
+            <div id="ribbits" class="panel left">
+                <h1>Public Profiles</h1>
+                {{#each users}}
+                <div class="ribbitWrapper">
+                    <img class="avatar" src="{{gravatarLink _id}}">
+                    <span class="name">{{name}}</span> @{{username}} <span class="time">{{noOfFollowers _id}}<a href="#" id='{{_id}}' class='follow'>{{followText _id}}</a></span>
+                    <p id='last-ribbit'>
+                        {{lastRibbit _id}}
+                    </p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>

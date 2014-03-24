@@ -1,0 +1,36 @@
+<template name="buddiescontent">
+    <div id="content">
+        <div class="wrapper">
+            <div class="panel right">
+                <h1>Create a Ribbit</h1>
+                <p>
+                    <textarea name="text" class="ribbitText"></textarea>
+                    <input id="createRibbit" type="submit" value="Ribbit!">
+                </p>
+            </div>
+            <div id="ribbits" class="panel left">
+                <h1>Your Ribbit Profile</h1>
+                <div class="ribbitWrapper">
+                    <img class="avatar" src="gfx/user1.png">
+                    <span class="name">{{fullName}}</span> @{{userName}}
+                    <p>
+                        {{noOfRibbits}} Ribbits<span class="spacing">45 Followers</span><span class="spacing">32 Following</span><br>
+                        {{lastRibbit}}
+                    </p>
+                </div>
+            </div>
+            <div class="panel left">
+                <h1>Your Ribbit Buddies</h1>
+                {{#each ribbits}}
+                <div class="ribbitWrapper">
+                    <img class="avatar" src="gfx/user2.png">
+                    <span class="name">{{buddyFullName user_id}}</span> @{{buddyUserName user_id}} <span class="time">{{elapsedTime ribbit}}</span>
+                    <p>
+                        {{ribbit}}
+                    </p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>
