@@ -11,12 +11,22 @@ Meteor.publish('follows', function () {
     return Follows.find({});
 });
 
+Ribbits.allow({
+    insert: function() {
+        return true;
+    }
+});
 Ribbits.deny({
     insert: function(userId, doc) {
         return !(doc.user_id === userId);
     }
 });
 
+Follows.allow({
+    insert: function() {
+        return true;
+    }
+});
 Follows.deny({
     insert: function(userId, doc) {
         return !(doc.followee_id === userId);

@@ -29,8 +29,8 @@ Template.header.events({
         Session.set("currentPage", "buddies");
     },
 
-    'click #public': function (event, template) {
-        Session.set("currentPage", "public");
+    'click #profile': function (event, template) {
+        Session.set("currentPage", "profile");
     }
 });
 
@@ -135,9 +135,9 @@ Template.buddiescontent.helpers({
         var ribbits = Ribbits.find({user_id: Meteor.userId()}),
             retVal;
         if (ribbits.count() === 1) {
-            retVal = "1 Ribbit";
+            retVal = "1";
         } else {
-            retVal = ribbits.count() + " Ribbits";
+            retVal = ribbits.count();
         }
         return retVal;
     },
