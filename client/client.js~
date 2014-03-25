@@ -2,9 +2,7 @@
  * Created by dystopian on 3/24/14.
  */
 Ribbits = new Meteor.Collection('ribbits');
-Follows = new Meteor.Collection('follows');
 Meteor.subscribe('ribbits');
-Meteor.subscribe('follows');
 
 Template.header.events({
     'click #btnLogOut': function (event, template) {
